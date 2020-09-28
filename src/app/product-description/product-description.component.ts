@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ProductService} from '../product.service';
 import {Http} from '@angular/http';
+import {Album} from '../album'
 
 @Component({
   selector: 'app-product-description',
@@ -9,7 +10,7 @@ import {Http} from '@angular/http';
 })
 export class ProductDescriptionComponent implements OnInit {
   
-  albumInfo;
+  albumInfo:Album;
   constructor(private _productService:ProductService) {
 
   }
@@ -18,11 +19,7 @@ export class ProductDescriptionComponent implements OnInit {
     this.albumInfo = response;
   }
   ngOnInit() {
-    
-    this._productService.getAlbum(1);
-    
-    
-    
+    this._productService.getAlbum(1)
   }
 
 }
