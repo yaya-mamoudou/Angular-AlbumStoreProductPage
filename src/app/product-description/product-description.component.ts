@@ -20,6 +20,7 @@ export class ProductDescriptionComponent implements OnInit {
   }
   ngOnInit() {
     this._productService.getAlbum(1)
+    
   }
 
 }
