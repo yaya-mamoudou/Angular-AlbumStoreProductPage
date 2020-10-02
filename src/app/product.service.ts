@@ -15,7 +15,7 @@ export class ProductService {
 
   constructor(private _http: Http) {}
 
-  getProducts = ():Observable<Product[]>=>{
+  getProducts = ()=>{
     return this._http.get(this._productsUrl).map((response)=> response.json())
   };
 
