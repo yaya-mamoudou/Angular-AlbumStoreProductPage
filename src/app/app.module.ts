@@ -11,9 +11,10 @@ import { ProductListComponent } from './product-list/product-list.component';
 import {RouterModule,Routes} from '@angular/router';
 
 
-const appRoutes:Routes = [
+const appRoutes: Routes = [
   {path: 'products',component: 'ProductListComponent'},
-  {path: 'product/:id',component: 'ProductPageComponent'}
+  {path: 'product/:id',component: 'ProductPageComponent'},
+  { path: '', redirectTo: 'products', pathMatch: 'full' }
 ];
 
 @NgModule({
@@ -27,7 +28,8 @@ const appRoutes:Routes = [
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [ProductService],
   bootstrap: [AppComponent]
